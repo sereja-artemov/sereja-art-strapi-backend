@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post",
+      "inversedBy": "categories"
+    },
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "renamedCategory": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::note.note",
+      "mappedBy": "categories"
+    }
+  }
+}
